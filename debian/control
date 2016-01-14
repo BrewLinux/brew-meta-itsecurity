@@ -1,0 +1,61 @@
+Source: brew-meta-itsecurity
+Section: metapackages
+Priority: optional
+Maintainer: c00clupea <c00clupea@entwicklerbox>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+Homepage: <insert the upstream URL, if relevant>
+Vcs-Git: https://github.com/BrewLinux/brew-meta-itsecurity.git
+Vcs-Browser: https://github.com/BrewLinux/brew-meta-itsecurity.git
+
+
+Package: brew-meta-itsecurity
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: base package for it-security lessons
+ Base package for it-security
+
+Package: brew-meta-itsecurity-all
+Architecture: all
+Depends: brew-meta-itsecurity-network,
+	 brew-meta-itsecurity-forensics,
+	 brew-meta-itsecurity-reverse,
+	 ${misc:Depends}
+Description: all packages for it-security lessons
+ All packages for it-security
+
+Package: brew-meta-itsecurity-network
+Architecture: all
+Depends:  tcpdump,
+	  wireshark,
+	  hping3,
+	  ethtool,
+	  nmap,
+	  dnstracer,
+	  ntop,
+	  ${misc:Depends}
+Description: base package for it-security networking lessons
+ Base package for it-security networking lessons
+
+Package: brew-meta-itsecurity-forensics
+Architecture: all
+Depends:  gddrescue,
+	  extundelete,
+	  foremost,
+	  volatility,
+	  binwalk,
+	  ${misc:Depends}
+Description: base package for it-security networking lessons
+ Base package for it-security networking lessons
+
+
+Package: brew-meta-itsecurity-reverse
+Architecture: all
+Depends:  valgrind,
+	  wxhexeditor,
+	  brew-c,
+	  python-distorm3,
+	  ${misc:Depends}
+Description: base package for it-security malware lessons
+ Base package for it-security malware lessons
+
