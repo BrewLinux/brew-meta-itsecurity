@@ -11,7 +11,8 @@ Vcs-Browser: https://github.com/BrewLinux/brew-meta-itsecurity.git
 
 Package: brew-meta-itsecurity
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: kali-archive-keyring,
+	 ${misc:Depends}
 Description: base package for it-security lessons
  Base package for it-security
 
@@ -19,7 +20,8 @@ Package: brew-meta-itsecurity-all
 Architecture: all
 Depends: brew-meta-itsecurity-network,
 	 brew-meta-itsecurity-forensics,
-	 brew-meta-itsecurity-reverse,
+	 brew-meta-itsecurity-malware,
+	 brew-meta-itsecurity-pentest,
 	 ${misc:Depends}
 Description: all packages for it-security lessons
  All packages for it-security
@@ -49,13 +51,25 @@ Description: base package for it-security networking lessons
  Base package for it-security networking lessons
 
 
-Package: brew-meta-itsecurity-reverse
+Package: brew-meta-itsecurity-malware
 Architecture: all
 Depends:  valgrind,
 	  wxhexeditor,
 	  brew-c,
 	  python-distorm3,
+	  ollydbg,
+	  brew-meta-itsecurity,
+	  cuckoo,
 	  ${misc:Depends}
 Description: base package for it-security malware lessons
  Base package for it-security malware lessons
 
+Package: brew-meta-itsecurity-pentest
+Architecture: all
+Depends:  metasploit,
+	  burpsuite,
+	  sqlmap,
+	  brew-meta-itsecurity,
+	  ${misc:Depends}
+Description: base package for it-security pentesting lessons
+ Base package for it-security pentesting lessons
